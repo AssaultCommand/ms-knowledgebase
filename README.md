@@ -3,11 +3,11 @@ School project for Maerschalk. Building a knowledgebase for code snippets and mo
 
 
 ## Setup local instance
-Add the following to your `xampp-directory/apache/conf/extra/httpd-vhosts.conf`
+Add the following to your `xampp-directory/apache/conf/extra/httpd-vhosts.conf` but adjust the directory.
 ```
 <VirtualHost *:80>
     ServerAdmin caspar@cspr.io
-    DocumentRoot "D:/Users/Caspar/Documents/Projects/Websites/ms-knowledgebase"
+    DocumentRoot "some-local-directory/ms-knowledgebase"
     ServerName kennisbank.maerschalk.test
     ErrorLog "logs/kennisbank.maerschalk.test.log"
     CustomLog "logs/kennisbank.maerschalk.test.log" common
