@@ -11,6 +11,9 @@ Add the following to your `xampp-directory/apache/conf/extra/httpd-vhosts.conf` 
     ServerName kennisbank.maerschalk.test
     ErrorLog "logs/kennisbank.maerschalk.test.log"
     CustomLog "logs/kennisbank.maerschalk.test.log" common
+    <Directory some-local-directory/ms-knowledgebase>
+        Require all granted 
+    </Directory>
 </VirtualHost>
 ```
 
