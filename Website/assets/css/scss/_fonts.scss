@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow|Barlow+Semi+Condensed');
+@import "../../plugins/fontawesome-free-5.8.1/scss/fontawesome.scss" ;
+@import "../../plugins/fontawesome-free-5.8.1/scss/regular.scss";
+@import "../../plugins/fontawesome-free-5.8.1/scss/solid.scss";
+
+html, body {
+  font-family: 'Barlow', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, button, .btn, input, textarea, .navbar {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}

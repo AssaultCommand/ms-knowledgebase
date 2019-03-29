@@ -1,0 +1,157 @@
+header {
+
+  nav.navbar {
+    height: 100px;
+    padding: 20px 80px;
+    background: $purple;
+    color: $white;
+
+    a.navbar-brand img {
+      height: 70px;
+      width: auto;
+    }
+
+    ul.navbar-nav{
+      margin-left: 30px;
+
+      li.nav-item {
+        a.nav-link {
+          display: inline-block;
+          margin-right: 15px;
+        	padding: 0 15px;
+          height: 50px;
+        	font-size: 22px;
+        	line-height: 44px;
+          border-radius: $border-radius;
+          border-width: $border-width;
+          border-color: transparent;
+          color: $white;
+
+          &:hover, &:focus {
+            background-color: transparent;
+            border-color: $white;
+            color: $white;
+            box-shadow: none;
+          }
+        }
+
+        &.active {
+          a.nav-link {
+            padding: 0 30px;
+            background-color: $white;
+            border-color: $white;
+            color: $purple;
+          }
+        }
+      }
+    }
+
+    .nav-right {
+      input, a.btn {
+        box-sizing: border-box;
+        padding: 10px 15px;
+        height: 50px;
+        border-radius: $border-radius;
+        border-width: $border-width;
+      }
+
+      input {
+      	font-size: 18px;
+        border-color: $white;
+      }
+
+      .input-group {
+        margin-right: 30px;
+
+        .input-group-btn .btn-group {
+          .btn {
+            height: 50px;
+            border-radius: 0;
+            margin-left: -1px;
+
+            &:not(.dropdown-toggle) {
+              padding: 0;
+              width: 50px;
+              font-size: 22px;
+              line-height: 44px;
+              text-align: center;
+              background-color: $purple-dark;
+              border-color: $purple-dark;
+              color: $white;
+
+              &:hover, &:focus {
+                background-color: $purple-light;
+                border-color: $purple-light;
+              }
+            }
+          }
+
+          .btn:last-child {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+          }
+
+          .dropdown.dropdown-lg {
+          	height: 50px;
+            background-color: $white;
+
+            .dropdown-menu {
+              margin-top: -1px;
+              padding: 6px 20px;
+              background-color: $white;
+
+              .form-horizontal {
+                .btn[type="submit"] {
+                  border-top-left-radius: $border-radius;
+                  border-bottom-left-radius: $border-radius;
+                }
+
+                .form-group {
+                  margin-left: 0;
+                  margin-right: 0;
+
+                  .form-control:last-child {
+                    border-top-left-radius: $border-radius;
+                    border-bottom-left-radius: $border-radius;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+          #adv-search {
+              width: 350px;
+              margin: 0 auto;
+          }
+          .dropdown.dropdown-lg {
+              position: static !important;
+          }
+          .dropdown.dropdown-lg .dropdown-menu {
+              min-width: 350px;
+          }
+      }
+    }
+
+    a.nav-user {
+      box-sizing: border-box;
+      margin-left: 30px;
+      padding: 0;
+      height: 50px;
+      width: 50px;
+      font-size: 22px;
+      line-height: 44px;
+      text-align: center;
+      background-color: $purple-dark;
+      border-color: $purple-dark;
+      color: $white;
+
+      &:hover, &:focus {
+        background-color: $purple-light;
+        border-color: $purple-light;
+      }
+    }
+  }
+}
