@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title>Maerschalk Kennisbank</title>
 
-    <script src="assets/plugins/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
-    <script src="assets/plugins/popper-1.14.7.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"></script>
+    <script src="assets/plugins/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/plugins/popper-1.14.7.min.js"></script>
 
-    <link rel="stylesheet" href="assets/plugins/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T">
-    <script src="assets/plugins/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"></script>
+    <link rel="stylesheet" href="assets/plugins/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="assets/plugins/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
       <link href="assets/plugins/fontawesome-free-5.8.1/css/all.css" rel="stylesheet"> <!--load all styles -->
 
