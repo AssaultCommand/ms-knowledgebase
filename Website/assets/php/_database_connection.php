@@ -3,7 +3,7 @@
 
 	function database_connect() {
 		$GLOBALS['database']['connection'] = mysqli_connect($GLOBALS['database']['ip'], $GLOBALS['database']['user'], $GLOBALS['database']['password'], $GLOBALS['database']['database']);
-		if (mysqli_connect_errno($GLOBALS['connection']))
+		if (mysqli_connect_errno($GLOBALS['database']['connection']))
 		{
 			return "Failed to connect to MySQL: " . mysqli_connect_error();
 		}

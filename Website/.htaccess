@@ -1,5 +1,5 @@
 Options +FollowSymlinks -MultiViews
-RewriteEngine Options
+RewriteEngine on
 
 DirectoryIndex index.php?page=home
 
