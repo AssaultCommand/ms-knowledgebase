@@ -1,0 +1,164 @@
+@import "_header";
+
+.content-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    .nav-category {
+        order: 0;
+        flex-basis: 300px;
+        flex-shrink: 0;
+        padding: 30px 10px 10px 16px;
+        min-height: calc(100% - 80px);
+        background-color: $purple-light;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                position: relative;
+                text-indent: 0;
+                list-style-type: none;
+
+                ul {
+                    margin-left: 16px;
+                }
+
+                .category {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    margin: 10px 0 10px -6px;
+                    background-color: lighten($purple-light, 15);
+                    border-radius: 6px;
+                    transition: border-radius ease-in-out 0.1s;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 6px;
+                        height: 100%;
+                        background-color: lighten($purple-light, 15);
+                        border-top-left-radius: 6px;
+                        border-bottom-left-radius: 6px;
+                        transition: border-radius ease-in-out 0.1s;
+                    }
+
+                    &:hover, &:focus {
+                        background-color: lighten($purple-light, 30);
+                        border-radius: 4px;
+
+                        &:before {
+                            background-color: lighten($purple-light, 30);
+                            border-top-left-radius: 4px;
+                            border-bottom-left-radius: 4px;
+                        }
+                    }
+
+                    &.active {
+                        background-color: $white;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        margin-right: -10px;
+
+                        &:before {
+                            background-color: $white;
+                        }
+                        
+                        button {
+                            &[aria-expanded="true"] {
+                                background-color: $white;
+                            }
+                        }
+                    }
+
+                    a {
+                        order: 0;
+                        flex-grow: 1;
+                        padding: 10px 15px;
+                        color: $purple-dark;
+                        text-decoration: none;
+                    }
+
+                    button {
+                        order: 1;
+                        flex-basis: 50px;
+                        flex-shrink: 0;
+                        border-radius: 6px;
+
+                        &[aria-expanded="true"] {
+                            background-color: lighten($purple-light, 30);
+                        }
+
+                        &:before {
+                            content: "\f078";
+                            font-family: 'Font Awesome 5 Free';
+                            font-weight: 900;
+                            color: $purple-dark;
+                        }
+
+                        &[aria-expanded="false"]:before {
+                            content: "\f053";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .page {
+        order: 1;
+        flex-grow: 1;
+        padding: 60px 40px;
+
+        .page-title {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            padding-bottom: 30px;
+    
+            .title-area {
+                order: 0;
+                flex-shrink: 2;
+                flex-grow: 1;
+                padding-right: 40px;
+            }
+    
+            .button-area {
+                order: 1;
+                flex-basis: 250px;
+                flex-shrink: 1;
+                padding-top: 5px;
+            }
+        }
+
+        .page-content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+    
+            .page-main {
+                order: 0;
+                flex-shrink: 5;
+                flex-grow: 1;
+                padding-right: 40px;
+            }
+    
+            .page-sidebar {
+                order: 1;
+                flex-basis: 250px;
+                flex-shrink: 1;
+    
+                aside {
+                    margin-bottom: 30px;
+                    padding: 10px;
+                    border-radius: 6px;
+                    background-color: $grey-light;
+    
+                }
+            }
+        }
+    }
+}

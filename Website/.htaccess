@@ -1,0 +1,10 @@
+Options +FollowSymlinks -MultiViews
+RewriteEngine Options
+
+DirectoryIndex index.php?page=home
+
+### Default page loading
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([a-zA-Z0-9-_.]*)/?$ index.php?page=$1 [L,NC]

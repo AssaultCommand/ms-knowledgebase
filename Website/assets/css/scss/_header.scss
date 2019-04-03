@@ -1,18 +1,18 @@
 header {
 
   nav.navbar {
-    height: 100px;
-    padding: 20px 80px;
+    height: 80px;
+    padding: 20px 40px;
     background: $purple;
     color: $white;
 
     a.navbar-brand img {
-      height: 70px;
+      height: 50px;
       width: auto;
     }
 
     ul.navbar-nav{
-      margin-left: 30px;
+      margin-left: 15px;
 
       li.nav-item {
         a.nav-link {
@@ -20,7 +20,7 @@ header {
           margin-right: 15px;
         	padding: 0 15px;
           height: 50px;
-        	font-size: 22px;
+        	font-size: 20px;
         	line-height: 44px;
           border-radius: $border-radius;
           border-width: $border-width;
@@ -72,7 +72,7 @@ header {
             &:not(.dropdown-toggle) {
               padding: 0;
               width: 50px;
-              font-size: 22px;
+              font-size: 20px;
               line-height: 44px;
               text-align: center;
               background-color: $purple-dark;
@@ -135,18 +135,22 @@ header {
       }
     }
 
-    a.nav-user {
+    .nav-user {
       box-sizing: border-box;
       margin-left: 30px;
       padding: 0;
       height: 50px;
       width: 50px;
-      font-size: 22px;
+      font-size: 20px;
       line-height: 44px;
       text-align: center;
       background-color: $purple-dark;
       border-color: $purple-dark;
       color: $white;
+
+      &:after {
+        display: none;
+      }
 
       &:hover, &:focus {
         background-color: $purple-light;

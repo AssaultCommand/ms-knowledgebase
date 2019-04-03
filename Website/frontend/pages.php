@@ -190,7 +190,7 @@
                 </div>
             </div>
         </main>
-                <div class="pageBtnsC">
+        <div class="pageBtnsC">
             <div class="pageBtns">
                 <div class="plusBtn"><i class="fas fa-plus"></i>Add new</div>
                 <div class="editBtn"><i class="fas fa-edit"></i>Edit</div>
