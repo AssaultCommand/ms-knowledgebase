@@ -10,7 +10,6 @@
 }
 
  .page-main{
-	padding: 10px;
 
 	.languageDescriptor{
 		color: $font-color;
@@ -20,5 +19,7 @@
 	.categoryItem{
 		background-color: $grey-light;
     	margin-bottom: 5%;
+   	    padding: 10px;
 	}
-}	
+}
+

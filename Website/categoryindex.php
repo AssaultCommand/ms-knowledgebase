@@ -65,6 +65,44 @@
 		</section>
 </section>
 
+<section class="page-sidebar">
+	<aside class="metaInfo">
+		<h4 class="sidePanelTitle">Meta info</h4>
+		<div class="metaInfoText">Posted by Christian 12/11/18</div>
+			<div class="btn btn-primary metaInfoBtn"><i class="fas fa-arrow-up"></i> Like</div>
+			<div class="metaInfoLikeCount">5 Likes</div>
+		<div class="metaInfoLikes">
+		<div class="metaInfoTitle">
+			<div>Languages:</div>
+			<div>HTML, JS</div>
+		</div>
+		<div class="metaInfoTitle">
+			<div>Frameworks:</div>
+			<div>N/A</div>
+		</div>
+		<div class="metaInfoTitle">
+			<div>Platforms:</div>
+		</div>
+		<div class="sideExtended">
+			<div>Show More</div>
+			<div><i class="fas fa-arrow-down"></i></div>
+		</div>
+		</div>
+	</aside>
+	<aside class="relatedPages">
+		<h4 class="sidePanelTitle">Related Pages</h4>
+		<div class="relatedPage">Facebook Sharing Button</div>
+		<div class="relatedPage">Facebook Sharing Button</div>
+		<div class="relatedPage">Facebook Sharing Button</div>
+		<div class="relatedPage">Facebook Sharing Button</div>
+		<div class="relatedPage">Facebook Sharing Button</div>
+		<div class="sideExtended">
+			<div>Show More</div>
+			<div><i class="fas fa-arrow-down"></i></div>
+		</div>
+	</aside>
+</section>
+
 <?php
 	$html = ob_get_clean();
 	$GLOBALS['page']['content'] = $html;
