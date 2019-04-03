@@ -14,11 +14,8 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<h1>
-						Sharing
+						Search: <span class="searchSubject">Facebook</span>
 					</h1>
-					<div class="breadcrumbs">
-						<span>Front end</span> > <span>Social Media</span> > <span>Sharing</span>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -35,7 +32,7 @@
 			<div class="row">
 				<div class="col-sm-12 categoryItem">
 					<h3 class="indexResultName">
-						Google Plus Button
+						Facebook Page Feed
 					</h3>
 
 					<div class="languageDescriptor">HTML-JS</div>
@@ -53,35 +50,42 @@
 				</div>
 				<div class="col-sm-12 categoryItem">
 					<h3 class="indexResultName">
-						Twitter Sharing Button
+						Like/Follow Facebook Links
 					</h3>
 
 					<div class="languageDescriptor">HTML-JS</div>
-
+					
 					'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 				</div>
 				<div class="col-sm-12 categoryItem">
 					<h3 class="indexResultName">
-						Snapchat Share Post BUtton
+						Combining Social Media Feeds
 					</h3>
 
 					<div class="languageDescriptor">HTML-JS</div>
-
-					'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-				</div>
-				<div class="col-sm-12 categoryItem">
-					<h3 class="indexResultName">
-						Share To Whatsapp / Skype / Discord / Etc.
-					</h3>
-
-					<div class="languageDescriptor">HTML-JS</div>
-
+					
 					'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 				</div>
 			</div>
 		</div>
 	</section>
 
+		<section class="page-sidebar">
+			<aside class="metaInfo">
+				<h4 class="sidePanelTitle">Authors</h4>
+				<div class="sideBarAuthors">
+
+					<form autocomplete="off" action="">
+						<div class="autocomplete">
+							<input id="searchAuthor" type="text" name="myCountry" placeholder="Zoek op auteur">
+						</div>
+					</form>
+
+				</div>
+			</aside>
+			<script>
+				autocomplete(document.getElementById("searchAuthor"), authors);
+			</script>
 		<section class="page-sidebar">
 			<aside class="metaInfo">
 				<h4 class="sidePanelTitle">Languages</h4>

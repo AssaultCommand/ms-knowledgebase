@@ -11,6 +11,7 @@
     <script src="assets/plugins/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script src="assets/plugins/ckeditor/ckeditor.js"></script>
+    <script src="assets/js/authors.js"></script>
 
     <link href="assets/plugins/fontawesome-free-5.8.1/css/all.css" rel="stylesheet"> <!--load all styles -->
 
