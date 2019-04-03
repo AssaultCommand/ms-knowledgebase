@@ -18,10 +18,9 @@ $GLOBALS['website'] = array(
 /* - Database - */
 
 $GLOBALS['database'] = array(
-    'ip' => '',
-    'database' => '',
-    'prefix' => '',
-    'user' => '',
-    'password' => ''
+    'ip' => '192.99.219.32',
+    'database' => 'armorwat_maerschalk_kb',
+    'user' => 'armorwat_mrschlk',
+    'password' => 'IRu#n@v&rhqoMMcLq('
 );
 ?>
