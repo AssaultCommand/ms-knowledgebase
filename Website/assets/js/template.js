@@ -1,3 +1,87 @@
+/* - Custom Template Tags - */
+
+	/* custom_tag_url_encode()
+	*  Returns the value with spaces replaced with underscores for better looking URLs.
+	*/
+	function custom_tag_breadcrumbs(value) {
+		breadcrumbs_list = JSON.parse(value);
+		// <span>Front end</span> > <span>Social Media</span> > <span>Sharing</span> > <span>Buttons</span> > <span>Scripted</span>
+		breadcrumbs_output = '';
+
+		breadcrumbs_list.foreach(function(breadcrumbs) {
+			breadcrumbs_string = [];
+			breadcrumbs.foreach(function(breadcrumb) {
+				$.ajax({
+					url: options.website.url + 'assets/php/data.php?data=category&id=' + value,
+					type: 'get',
+					dataType: 'json',
+					async: false,
+					success: function(data) {
+						breadcrumb = data.data[0].username;
+						breadcrumbs_string.push('<a href="#' + data.data[0].slug + '">' + data.data[0].slug + '</a>');
+					}
+				});
+			});
+			breadcrumbs_output += breadcrumbs_string.join(' &#x3E; ');
+		});
+
+		return breadcrumbs_output;
+	}
+
+	/* custom_tag_date_iso()
+	*  Returns an ISO timestamp from a MySQL timestamp.
+	*/
+	function custom_tag_date_iso(value) {
+		var t = value.split(/[- :]/);
+		var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+
+		return d.toISOString();
+	}
+
+	/* custom_tag_date_text()
+	*  Returns a readable text timestamp from a MySQL timestamp.
+	*/
+	function custom_tag_date_text(value) {
+		var t = value.split(/[- :]/);
+		var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+
+		return d.getDate() + ' ' + d.getShortMonthName() + ' ' + d.getFullYear();
+	}
+
+	/* custom_tag_user_id_name()
+	*  Returns a username based on a user id.
+	*/
+	function custom_tag_user_id_name(value) {
+		var username = 'Anonymous';
+
+		$.ajax({
+			url: options.website.url + 'data.php?data=username&id=' + value,
+			type: 'get',
+			dataType: 'json',
+			async: false,
+			success: function(data) {
+				username = data.data[0].username;
+			}
+		});
+
+		return username;
+	}
+
+	/* Register the custom template tags */
+
+		/* {{url value /}} */
+		$.views.tags("breadcrumbs", custom_tag_url_encode);
+
+		/* {{date_iso value /}} */
+		$.views.tags("date_iso", custom_tag_date_iso);
+
+		/* {{date_text value /}} */
+		$.views.tags("date_text", custom_tag_date_text);
+
+		/* {{user_id_name value /}} */
+		$.views.tags("user_id_name", custom_tag_user_id_name);
+
+
 /* - Template Functions - */
 
 	/* get_template()
