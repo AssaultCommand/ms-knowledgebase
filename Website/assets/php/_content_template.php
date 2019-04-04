@@ -123,7 +123,7 @@
 	*  Return the website base url as set in options.php
 	*/
 	function get_URL_base() {
-		return 'https://' . $GLOBALS['website']['url'];
+		return $GLOBALS['website']['http'] . '://' . $GLOBALS['website']['url'];
 	}
 
 	/* get_URL_full($part)
@@ -140,7 +140,7 @@
 	*  Return the full current URL.
 	*/
 	function get_URL_current() {
-		return 'https://' . $GLOBALS['website']['domain'] . $_SERVER[REQUEST_URI];
+		return $GLOBALS['website']['http'] . '://' . $GLOBALS['website']['domain'] . $_SERVER[REQUEST_URI];
 	}
 
 
