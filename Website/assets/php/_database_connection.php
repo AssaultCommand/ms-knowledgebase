@@ -44,10 +44,12 @@
 		return $json;
 	}
 
-	function SQL_rows_parent_children_to_JSON($query, $parent_id = NULL) {
+	function SQL_rows_to_JSON_tree($query) {
 		$results = mysqli_query($GLOBALS['database']['connection'], $query);
 
 		$json = "{\n\"data\": [";
+
+		print_r( mysqli_fetch_assoc($results));
 
 		while($result = mysqli_fetch_assoc($results)) {
 			if ($result['parent'] == $parent_id) {
@@ -59,6 +61,21 @@
 		$json = rtrim($json, ',') . "\n]\n}";
 
 		return $json;
+	}
+
+	function buildTree(array &$elements, $parentId = 0) {
+    $branch = array();
+    foreach ($elements as &$element) {
+      if ($element['parent'] == $parentId) {
+        $children = buildTree($elements, $element['id']);
+        if ($children) {
+          $element['children'] = $children;
+        }
+        $branch[$element['id']] = $element;
+        unset($element);
+      }
+    }
+    return $branch;
 	}
 
 	function JSON_combine() {

@@ -17,8 +17,18 @@
 			}
 			// The SQL Query
 			$query = 'SELECT *, (SELECT COUNT(*) FROM categories WHERE parent = C.id) as children FROM categories C' . $parent . ' ORDER BY name';
-			echo SQL_rows_to_JSON($query);
+			echo SQL_rows_to_JSON_tree($query);
 			break;
+
+			case 'category':
+				if(isset($_GET['id']) && (int) $_GET['id'] != null){
+					$id = mysqli_real_escape_string($GLOBALS['database']['connection'], (int) $_GET['id']);
+
+					// The SQL Query
+					$query = 'SELECT * FROM categories WHERE id = ' . $id;
+					echo SQL_row_to_JSON($query);
+				}
+				break;
 
 		case 'category_items':
 			$filter_array = [];
