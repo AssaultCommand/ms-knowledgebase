@@ -10,7 +10,7 @@
 $GLOBALS['website'] = array(
     'title' => 'Maerschalk Kennisbank',
     'domain' => 'kennisbank.maerschalk.test',
-    'url' => 'kennisbank.maerschalk.test/',
+    'url' => 'kennisbank.maerschalk.test/Website/',
     'http' => 'http',
     'description' => '',
 );
