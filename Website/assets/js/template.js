@@ -5,24 +5,25 @@
 	*/
 	function custom_tag_breadcrumbs(value) {
 		breadcrumbs_list = JSON.parse(value);
-		// <span>Front end</span> > <span>Social Media</span> > <span>Sharing</span> > <span>Buttons</span> > <span>Scripted</span>
 		breadcrumbs_output = '';
+		console.log(breadcrumbs_list);
 
-		breadcrumbs_list.foreach(function(breadcrumbs) {
+		breadcrumbs_list.forEach(function(breadcrumbs) {
 			breadcrumbs_string = [];
-			breadcrumbs.foreach(function(breadcrumb) {
+			breadcrumbs.forEach(function(breadcrumb) {
 				$.ajax({
-					url: options.website.url + 'assets/php/data.php?data=category&id=' + value,
+					url: options.website.url + 'assets/php/data.php?data=category&id=' + breadcrumb,
 					type: 'get',
 					dataType: 'json',
-					async: false,
-					success: function(data) {
+					async: false
+				})
+				 .done(function(data) {
 						breadcrumb = data.data[0].username;
 						breadcrumbs_string.push('<a href="#' + data.data[0].slug + '">' + data.data[0].slug + '</a>');
-					}
-				});
+						console.log(breadcrumbs_string.join(' &#x3E; '));
+				 });
 			});
-			breadcrumbs_output += breadcrumbs_string.join(' &#x3E; ');
+			breadcrumbs_output += breadcrumbs_string.join(' &#x3E; ') + '<br>';
 		});
 
 		return breadcrumbs_output;
@@ -70,7 +71,7 @@
 	/* Register the custom template tags */
 
 		/* {{url value /}} */
-		$.views.tags("breadcrumbs", custom_tag_url_encode);
+		$.views.tags("breadcrumb_parse", custom_tag_breadcrumbs);
 
 		/* {{date_iso value /}} */
 		$.views.tags("date_iso", custom_tag_date_iso);

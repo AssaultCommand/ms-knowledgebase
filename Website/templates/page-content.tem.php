@@ -7,8 +7,9 @@
 						{{:page.title}}
 					</h1>
 					<div class="breadcrumbs">
-						<span>Front end</span> > <span>Social Media</span> > <span>Sharing</span> > <span>Buttons</span> > <span>Scripted</span>
-						<div class="allPaths">Show all paths</div>
+						{{breadcrumb_parse page.breadcrumbs /}}
+						<!-- <span>Front end</span> > <span>Social Media</span> > <span>Sharing</span> > <span>Buttons</span> > <span>Scripted</span> -->
+						<!-- <div class="allPaths">Show all paths</div> -->
 					</div>
 				</div>
 			</div>
