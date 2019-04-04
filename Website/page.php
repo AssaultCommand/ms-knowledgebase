@@ -64,15 +64,19 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="attachmentIcn"><i class="fas fa-file"></i></div>
-					<div class="attachmentFileName">Code_Sample_v1.zip</div>
-					<div class="attachmentReleaseDate">Uploaded 2 weeks ago by <span>Pim</span></div>
+					<div class="attachmentDiv">
+						<div class="attachmentIcn"><i class="fas fa-file"></i></div>
+						<div class="attachmentFileName">Code_Sample_v1.zip</div>
+						<div class="attachmentReleaseDate">Uploaded 2 weeks ago by <span>Pim</span></div>
+					</div>	
 				</div>
 
 				<div class="col-sm-12">
-					<div class="attachmentIcn"><i class="fas fa-file"></i></div>
-					<div class="attachmentFileName">Code_Sample_v1.zip</div>
-					<div class="attachmentReleaseDate">Uploaded 2 weeks ago by <span>Pim</span></div>
+					<div class="attachmentDiv">
+						<div class="attachmentIcn"><i class="fas fa-file"></i></div>
+						<div class="attachmentFileName">Code_Sample_v1.zip</div>
+						<div class="attachmentReleaseDate">Uploaded 2 weeks ago by <span>Pim</span></div>
+					</div>
 				</div>
 			</div>
 			<hr>
@@ -90,12 +94,12 @@
 				<div class="col-sm-12">
 					<div class="comment">
 						<div class="commentPoster">
-						<div class="commentIcn"><i class="fas fa-user"></i></div>
-						<div class="commentFileName">Richard</div>
-						<div class="commentReleaseDate">Poster <span>2</span> days ago</div>
+							<div class="commentIcn"><i class="fas fa-user"></i></div>
+							<div class="commentFileName">Richard</div>
+							<div class="commentReleaseDate">Poster <span>2</span> days ago</div>
 						</div>
 						<div class="commentContent">
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 						</div>
 						<div class="commentBtns">
 							<div class="btn btn-primary replyBtn"><i class="far fa-comment"></i>Reply</div>
@@ -147,10 +151,10 @@
 		<aside class="relatedPages">
 			<h4 class="sidePanelTitle">Related Pages</h4>
 			<div class="relatedPage">Facebook Sharing Button</div>
-			<div class="relatedPage">Facebook Sharing Button</div>
-			<div class="relatedPage">Facebook Sharing Button</div>
-			<div class="relatedPage">Facebook Sharing Button</div>
-			<div class="relatedPage">Facebook Sharing Button</div>
+			<div class="relatedPage">Twitter Sharing Button</div>
+			<div class="relatedPage">Snapchat Share Post Button</div>
+			<div class="relatedPage">Share to Whatsapp / Skype ...</div>
+			<div class="relatedPage">YouTube Subscribe Button</div>
 			<div class="sideExtended">
 				<div>Show More</div>
 				<div><i class="fas fa-arrow-down"></i></div>

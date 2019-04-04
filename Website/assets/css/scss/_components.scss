@@ -51,3 +51,102 @@ label {
 	display: block;
 	cursor: pointer;
 }
+
+.btn-primary {
+    color: $white;
+    background-color: $purple;
+    border-color: $purple;
+
+	&:hover {
+	    color: #fff;
+	    background: $purple-light;
+	    border-color: $purple-light;
+	}
+}
+
+.attachmentDiv{
+    background: $grey-light;
+    margin: 10px 0;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+	.attachmentIcn {
+		order: 0;
+        flex-basis: 30px;
+        flex-shrink: 0;
+        flex-grow: 0;
+	}
+
+	.attachmentFileName{
+		order: 1;
+        flex-grow: 1;
+	}
+
+	.attachmentReleaseDate{
+		 order: 2;
+	}
+}
+
+.comment{
+    background: $grey-light;
+    margin: 10px 0;
+    padding: 10px;
+
+	.commentContent {
+		margin: 10px 0;
+	}
+
+	.commentPoster{
+		display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+			
+			.commentIcn{
+				order: 0;
+				flex-basis: 30px;
+				flex-shrink: 0;
+				flex-grow: 0;
+			}
+
+			.commentFileName{
+				order: 1;
+			    flex-grow: 1;
+			}
+
+			.commentReleaseDate{
+				order: 2;
+			}
+	}
+}
+
+.relatedPage{
+    margin: 5px 0 0 0;
+    color: $purple-dark;
+}
+
+.sideExtended {
+	text-align: center;
+    margin-top: 10px;
+}
+
+.metaInfoLikeCount{
+	display: inline-block;
+	
+	.metaInfoBtn{
+		margin: 0 10px 0 0;
+	}
+}
+
+
+.metaInfoText, .metaInfoTitle{
+	margin: 10px 0;
+
+	 > div:nth-child(1){
+		font-weight: bold;
+		color: $purple-dark;
+	}
+
+}
