@@ -150,3 +150,43 @@ label {
 	}
 
 }
+
+.sideBarLanguages > div {
+	    margin: 5px;
+	.addedElement{
+			background: rgba(169, 126, 160, 0.2);
+		 > div {
+	 	    padding: 5px;
+		    display: inline-block;
+
+		   	&:nth-child(2){
+				font-weight: bold;
+			}
+
+			 &:nth-last-child() {
+			 margin: 0;
+			}
+		}
+	}
+}
+
+.editableIcns{
+	background: $grey-light;
+    padding: 2.5px 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	
+	> i {
+	 	margin: 0 5px;
+		color: green;
+		cursor: pointer; 
+		
+		&:nth-child(3) {
+			color: #ff5e00;
+		}
+
+		&:nth-child(4) {
+			color: red;
+		}
+	 }
+}
