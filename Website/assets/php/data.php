@@ -95,7 +95,7 @@
 				$query_pagecomments = 'SELECT * FROM page_comments WHERE page = (SELECT id FROM pages WHERE slug = "' . $slug . '")';
 				// echo SQL_row_to_JSON($query_page);
 				echo JSON_combine(
-					["page", SQL_row_to_JSON($query_page)],
+					["page", SQL_row_to_JSON($query_page), true],
 					["attachments", SQL_rows_to_JSON($query_pageattachments)],
 					["comments", SQL_rows_to_JSON($query_pagecomments)]
 				);

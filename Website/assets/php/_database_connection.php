@@ -44,11 +44,31 @@
 		return $json;
 	}
 
+	function SQL_rows_parent_children_to_JSON($query, $parent_id = NULL) {
+		$results = mysqli_query($GLOBALS['database']['connection'], $query);
+
+		$json = "{\n\"data\": [";
+
+		while($result = mysqli_fetch_assoc($results)) {
+			if ($result['parent'] == $parent_id) {
+				$json .= "\n" . json_encode($result) . ",";
+				SQL_rows_parent_children_to_JSON($query, $parent_id);
+			}
+		}
+
+		$json = rtrim($json, ',') . "\n]\n}";
+
+		return $json;
+	}
+
 	function JSON_combine() {
 		$json = "{\n\"data\": {\n";
     foreach (func_get_args() as $param) {
 			$param[1] = json_decode($param[1], true);
 			$param[1] = json_encode($param[1]["data"]);
+			if ($param[2]) {
+				$param[1] = trim($param[1], "[]");
+			}
 			$json .=  "\"" . $param[0] . "\": \n" . $param[1] . "\n,";
     }
 
@@ -57,20 +77,20 @@
 		return $json;
 	}
 
-	function JSON_concatenate($parent_JSON) {
-		$json = "{\n\"data\": {\n";
-		$parent_JSON = json_decode($parent_JSON, true);
-    foreach (array_slice(func_get_args(), 1) as $param) {
-			$param[1] = json_decode($param[1], true);
-			$param[1] = json_encode($param[1]["data"]);
-			$json .=  "\"" . $param[0] . "\": \n" . $param[1] . "\n,";
-    }
-		$json = rtrim($json,',') . "\n}\n}";
-
-		$parent_JSON = json_encode($parent_JSON);
-
-		return $json;
-	}
+	// function JSON_concatenate($parent_JSON) {
+	// 	$json = "{\n\"data\": {\n";
+	// 	$parent_JSON = json_decode($parent_JSON, true);
+  //   foreach (array_slice(func_get_args(), 1) as $param) {
+	// 		$param[1] = json_decode($param[1], true);
+	// 		$param[1] = json_encode($param[1]["data"]);
+	// 		$json .=  "\"" . $param[0] . "\": \n" . $param[1] . "\n,";
+  //   }
+	// 	$json = rtrim($json,',') . "\n}\n}";
+	//
+	// 	$parent_JSON = json_encode($parent_JSON);
+	//
+	// 	return $json;
+	// }
 
 	function SQL_assoc_JSON($query) {
 		$results = mysqli_query($GLOBALS['database']['connection'], $query);

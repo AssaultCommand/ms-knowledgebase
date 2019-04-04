@@ -11,7 +11,10 @@
     </div>
     {{if children > 0}}
     <ul class="collapse" id="category-{{:id}}-sub">
-        
+        {{include nav-category-item.tem.php}}
+          {{:#name}}
+          a
+        {{/include}}
     </ul>
     {{/if}}
 </li>
