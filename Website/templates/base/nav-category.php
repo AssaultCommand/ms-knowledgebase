@@ -1,5 +1,5 @@
 <nav class="nav-category">
-    <ul>
+    <ul id="category-0">
         <li>
             <div class="category">
                 <a href="#">
@@ -65,5 +65,5 @@
 </nav>
 
 <script>
-
+    load_data_template('nav-category-item', '#category-0', options.website.url + 'assets/php/data.php', {'data': 'categories'}, 'append');
 </script>
