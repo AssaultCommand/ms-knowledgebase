@@ -96,8 +96,8 @@
 				// echo SQL_row_to_JSON($query_page);
 				echo JSON_combine(
 					["page", SQL_row_to_JSON($query_page), true],
-					["attachments", SQL_rows_to_JSON($query_pageattachments)],
-					["comments", SQL_rows_to_JSON($query_pagecomments)]
+					["attachments", SQL_rows_to_JSON($query_pageattachments), false],
+					["comments", SQL_rows_to_JSON($query_pagecomments), false]
 				);
 			}
 			break;
