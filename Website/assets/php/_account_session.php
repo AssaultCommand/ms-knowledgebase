@@ -36,7 +36,7 @@
   {
     Connect();
     $uid = mysqli_real_escape_string($GLOBALS['connection'], $_SESSION['uid']);
-    $sql = 'SELECT * FROM users WHERE uid = "'.$uid.'"';
+    $sql = 'SELECT * FROM users WHERE id = "'.$uid.'"';
     $result = mysqli_query($GLOBALS['connection'], $sql);
     $db_field = mysqli_fetch_assoc($result);
 

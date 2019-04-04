@@ -19,7 +19,7 @@
 
 /* - Misc Functions - */
 
-	function SQL_array_to_JSON($query) {
+	function SQL_rows_to_JSON($query) {
 		$results = mysqli_query($GLOBALS['database']['connection'], $query);
 
 		$json = "{\n\"data\": [";
@@ -33,13 +33,41 @@
 		return $json;
 	}
 
-	function SQL_to_JSON($query) {
+	function SQL_row_to_JSON($query) {
 		$results = mysqli_query($GLOBALS['database']['connection'], $query);
 		$result = mysqli_fetch_assoc($results);
 
 		$json = "{\n\"data\": [\n";
 		$json .= json_encode($result);
 		$json .= "\n]\n}";
+
+		return $json;
+	}
+
+	function JSON_combine() {
+		$json = "{\n\"data\": {\n";
+    foreach (func_get_args() as $param) {
+			$param[1] = json_decode($param[1], true);
+			$param[1] = json_encode($param[1]["data"]);
+			$json .=  "\"" . $param[0] . "\": \n" . $param[1] . "\n,";
+    }
+
+		$json = rtrim($json,',') . "\n}\n}";
+
+		return $json;
+	}
+
+	function JSON_concatenate($parent_JSON) {
+		$json = "{\n\"data\": {\n";
+		$parent_JSON = json_decode($parent_JSON, true);
+    foreach (array_slice(func_get_args(), 1) as $param) {
+			$param[1] = json_decode($param[1], true);
+			$param[1] = json_encode($param[1]["data"]);
+			$json .=  "\"" . $param[0] . "\": \n" . $param[1] . "\n,";
+    }
+		$json = rtrim($json,',') . "\n}\n}";
+
+		$parent_JSON = json_encode($parent_JSON);
 
 		return $json;
 	}

@@ -19,8 +19,8 @@
             if( $db_field['rank'] != '0' )
             {
                 $_SESSION['username'] = $username;
-                $_SESSION['uid'] = $db_field['uid'];
-                $_SESSION['avatar'] = 'uploads/profiles/avatar/'.$db_field['uid'].'.png';
+                $_SESSION['uid'] = $db_field['id'];
+                $_SESSION['avatar'] = 'uploads/profiles/avatar/'.$db_field['id'].'.png';
                 $_SESSION['rank'] = $db_field['rank'];
                 $_SESSION['logged'] = 'true';
                 $_SESSION['ip'] = getenv('REMOTE_ADDR');
@@ -120,7 +120,7 @@
               $result = mysqli_query($GLOBALS['connection'],$sql);
               $db_field = mysqli_fetch_assoc($result);
 
-              EmailConfirmSender($email, $username, $db_field['uid'], $randomcode);
+              EmailConfirmSender($email, $username, $db_field['id'], $randomcode);
 
               ClearSession();
               $_SESSION['logged'] = 'false';
@@ -181,7 +181,7 @@
   function EmailConfirm($uid, $verificationcode)
   {
     $uid = mysqli_real_escape_string($GLOBALS['connection'], $uid);
-    $sql = 'SELECT * FROM users WHERE uid = '.$uid;
+    $sql = 'SELECT * FROM users WHERE id = '.$uid;
     $result = mysqli_query($GLOBALS['connection'], $sql);
     $userexists = mysqli_num_rows($result);
 
@@ -191,7 +191,7 @@
       if($verificationcode == $db_field['verification'])
       {
         $randomcode = ConfirmCode(10);
-        $sql = 'UPDATE users SET activated = 1, verification = "'.$randomcode.'" WHERE uid = '.$uid;
+        $sql = 'UPDATE users SET activated = 1, verification = "'.$randomcode.'" WHERE id = '.$uid;
         if (mysqli_query($GLOBALS['connection'],$sql))
         {
           $_SESSION['state'] = 'success';
