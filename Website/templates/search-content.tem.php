@@ -66,10 +66,9 @@
 
 					<form autocomplete="off" action="">
 						<div class="autocomplete">
-							<input id="searchAuthor" type="text" name="myCountry" placeholder="Zoek op auteur">
+							<input id="searchAuthor" type="text" name="nameAuthor" placeholder="Zoek op auteur">
 						</div>
 					</form>
-
 				</div>
 			</aside>
 			<script>
@@ -80,23 +79,23 @@
 				<h4 class="sidePanelTitle">Languages</h4>
 				<div class="sideBarLanguages">
 					<div>
-					<input type="checkbox" id="phpcheckbox">
-						<label for="phpcheckbox">
+					<input type="checkbox" id="checkbox1">
+						<label for="checkbox1">
 							<div class="checkbox"></div>
 							<span>PHP</span>
 						</label>
-					<input type="checkbox" id="htmlcheckbox">
-						<label for="htmlcheckbox">
+					<input type="checkbox" id="checkbox2">
+						<label for="checkbox2">
 							<div class="checkbox"></div>
 							<span>HTML</span>
 						</label>
-					<input type="checkbox" id="javascriptcheckbox">
-						<label for="javascriptcheckbox">
+					<input type="checkbox" id="checkbox3">
+						<label for="checkbox3">
 							<div class="checkbox"></div>
 							<span>Javascript</span>
 						</label>
-					<input type="checkbox" id="csscheckbox">
-						<label for="csscheckbox">
+					<input type="checkbox" id="checkbox4">
+						<label for="checkbox4">
 							<div class="checkbox"></div>
 							<span>CSS</span>
 						</label>
@@ -107,23 +106,23 @@
 				<h4 class="sidePanelTitle">Framework</h4>
 				<div class="sideBarLanguages">
 					<div>
-					<input type="checkbox" id="laravelcheckbox">
-						<label for="laravelcheckbox">
+					<input type="checkbox" id="checkbox5">
+						<label for="checkbox5">
 							<div class="checkbox"></div>
 							<span>Laravel</span>
 						</label>
-					<input type="checkbox" id="composercheckbox">
-						<label for="composercheckbox">
+					<input type="checkbox" id="checkbox6">
+						<label for="checkbox6">
 							<div class="checkbox"></div>
 							<span>Composer</span>
 						</label>
-					<input type="checkbox" id="jquerycheckbox">
-						<label for="jquerycheckbox">
+					<input type="checkbox" id="checkbox7">
+						<label for="checkbox7">
 							<div class="checkbox"></div>
 							<span>jQuery</span>
 						</label>
-					<input type="checkbox" id="angularcheckbox">
-						<label for="angularcheckbox">
+					<input type="checkbox" id="checkbox8">
+						<label for="checkbox8">
 							<div class="checkbox"></div>
 							<span>Angular</span>
 						</label>
