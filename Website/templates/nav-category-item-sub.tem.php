@@ -1,6 +1,6 @@
 <?php include '../assets/php/functions.php'; ?>
 
-{{if parent == NULL}}
+{{if parent == ~id}}
 <li>
     <div class="category">
         <a href="#{{:slug}}">
@@ -11,7 +11,7 @@
         </button>
         {{/if}}
     </div>
-    {{if children > 0}}
+    {{if children > 0 ~id=id}}
     <ul class="collapse" id="category-{{:id}}-sub">
         {{for #view.ctx.root tmpl="nav-category-item-sub" ~id=id /}}
     </ul>

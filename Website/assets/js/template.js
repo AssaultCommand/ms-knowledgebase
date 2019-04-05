@@ -71,9 +71,17 @@
 		return username;
 	}
 
+	/* custom_tag_console_log()
+	*  Console output the current value.
+	*/
+	function custom_tag_console_log(value) {
+		console.log(value);
+		return value;
+	}
+
 	/* Register the custom template tags */
 
-		/* {{url value /}} */
+		/* {{breadcrumb_parse value /}} */
 		$.views.tags("breadcrumb_parse", custom_tag_breadcrumbs);
 
 		/* {{date_iso value /}} */
@@ -84,6 +92,9 @@
 
 		/* {{user_id_name value /}} */
 		$.views.tags("user_id_name", custom_tag_user_id_name);
+
+		/* {{console value /}} */
+		$.views.tags("console", custom_tag_console_log);
 
 
 /* - Template Functions - */

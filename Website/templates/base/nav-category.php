@@ -65,5 +65,6 @@
 </nav>
 
 <script>
+    get_template('nav-category-item-sub');
     load_data_template('nav-category-item', '#category-0', options.website.url + 'assets/php/data.php', {'data': 'categories'}, 'append');
 </script>
