@@ -30,6 +30,34 @@
 		return breadcrumbs_output;
 	}
 
+		/* custom_tag_languages()
+		*  Returns the formatted breadcrumbs based on a breadcrumbs array array.
+		*/
+		function custom_tag_languages(value) {
+			var language_list = JSON.parse(value);
+			language_list = language_list['languages'];
+			var language_output = [];
+			languages = {};
+
+			$.ajax({
+				url: options.website.url + 'assets/php/data.php?data=languages',
+				type: 'get',
+				dataType: 'json',
+				async: false
+			})
+			.done(function(data) {
+				languages = data;
+			});
+
+			language_list.forEach(function(language) {
+				var language_find = $.grep(languages.data, function(language_id){return language_id.id === language.toString();})[0];
+				language_output.push('<b>' + language_find['language'] + '</b>');
+			});
+
+			language_output = language_output.join(' - ');
+			return language_output;
+		}
+
 	/* custom_tag_date_iso()
 	*  Returns an ISO timestamp from a MySQL timestamp.
 	*/
@@ -83,6 +111,9 @@
 
 		/* {{breadcrumb_parse value /}} */
 		$.views.tags("breadcrumb_parse", custom_tag_breadcrumbs);
+
+		/* {{language_parse value /}} */
+		$.views.tags("language_parse", custom_tag_languages);
 
 		/* {{date_iso value /}} */
 		$.views.tags("date_iso", custom_tag_date_iso);

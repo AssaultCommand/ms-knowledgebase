@@ -3,7 +3,7 @@
 		{{:title}}
 	</h3>
 
-	<div class="languageDescriptor">{{:metainfo.languages}}</div>
-	
+	<div class="languageDescriptor">{{language_parse metainfo /}}</div>
 	{{:description}}
+	
 </div>

@@ -30,7 +30,7 @@
 	<section class="page-main">
 		<div class="container">
 			<div id="category-items" class="row">
-				
+
 			</div>
 		</div>
 	</section>
@@ -76,7 +76,7 @@
 							<div class="checkbox"></div>
 							<span>CSS</span>
 						</label>
-					</div>		
+					</div>
 				</div>
 			</aside>
 			<aside class="metaInfo">
@@ -103,7 +103,7 @@
 							<div class="checkbox"></div>
 							<span>Angular</span>
 						</label>
-					</div>		
+					</div>
 				</div>
 			</aside>
 		</section>
@@ -113,7 +113,7 @@
 
 <script>
 
-	var authors = []; 
+	var authors = [];
 
 	$.ajax({
 		url: window.options.website.url + 'assets/php/data.php?data=users',
