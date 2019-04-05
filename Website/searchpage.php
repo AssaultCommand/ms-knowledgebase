@@ -8,7 +8,7 @@
 	ob_start();
 ?>
 
-<section class="page-title">
+<!-- <section class="page-title">
 	<section class="title-area">
 		<div class="container">
 			<div class="row">
@@ -142,8 +142,16 @@
 				</div>
 			</aside>
 		</section>
-</section>
+</section> -->
 
+
+<div id="wrapper">	
+</div>
+
+
+<script>
+    load_data_template('search-content', '#wrapper', options.website.url + 'assets/php/data.php', {'data': 'page', 'slug':'facebook-like-button'}, 'append');
+</script>
 
 <?php
 	$html = ob_get_clean();

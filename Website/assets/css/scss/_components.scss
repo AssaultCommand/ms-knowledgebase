@@ -52,15 +52,15 @@ label {
 	cursor: pointer;
 }
 
-.btn-primary {
-    color: $white;
-    background-color: $purple;
-    border-color: $purple;
+.btn-primary:not(:disabled):not(.disabled) {
+  color: $white;
+  background-color: $purple;
+  border-color: $purple;
 
-	&:hover {
-	    color: #fff;
-	    background: $purple-light;
-	    border-color: $purple-light;
+	&:hover, &:active, &:focus {
+	    color: $white;
+	    background: $purple-light!important;
+	    border-color: $purple-light!important;
 	}
 }
 
@@ -189,4 +189,10 @@ label {
 			color: red;
 		}
 	 }
+}
+
+
+.breadcrumbs > a{
+	color: $purple-dark;
+	font-weight: bold;
 }

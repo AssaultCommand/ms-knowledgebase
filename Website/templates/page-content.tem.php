@@ -8,7 +8,7 @@
 					</h1>
 					<div class="breadcrumbs">
 						{{breadcrumb_parse page.breadcrumbs /}}
-						<!-- <span>Front end</span> > <span>Social Media</span> > <span>Sharing</span> > <span>Buttons</span> > <span>Scripted</span> -->
+
 						<!-- <div class="allPaths">Show all paths</div> -->
 					</div>
 				</div>
@@ -103,7 +103,7 @@
 	<section class="page-sidebar">
 		<aside class="metaInfo">
 			<h4 class="sidePanelTitle">Meta info</h4>
-			<div class="metaInfoText">Posted by Christian 12/11/18</div>
+			<div class="metaInfoText">Posted by {{user_id_name author /}}</div>
 				<div class="btn btn-primary metaInfoBtn"><i class="fas fa-arrow-up"></i> Like</div>
 				<div class="metaInfoLikeCount">5 Likes</div>
 			<div class="metaInfoLikes">

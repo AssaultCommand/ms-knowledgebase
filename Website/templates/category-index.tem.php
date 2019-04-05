@@ -1,14 +1,4 @@
-<?php
-	/* - Template Meta - */
-	$GLOBALS['page'] = array(
-		'title' => 'Index',
-	);
-
-	/* - Template Content - */
-	ob_start();
-?>
-
-<!-- <section class="page-title">
+<section class="page-title">
 	<section class="title-area">
 		<div class="container">
 			<div class="row">
@@ -17,7 +7,9 @@
 						Sharing
 					</h1>
 					<div class="breadcrumbs">
-						<span>Front end</span> > <span>Social Media</span> > <span>Sharing</span>
+						{{breadcrumb_parse page.breadcrumbs /}}
+
+						<!-- <div class="allPaths">Show all paths</div> -->
 					</div>
 				</div>
 			</div>
@@ -35,12 +27,11 @@
 			<div class="row">
 				<div class="col-sm-12 categoryItem">
 					<h3 class="indexResultName">
-						Google Plus Button
+						{{:page.title}}
 					</h3>
 
 					<div class="languageDescriptor">HTML-JS</div>
-					
-					'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+						{{:page.description}}
 				</div>
 				<div class="col-sm-12 categoryItem">
 					<h3 class="indexResultName">
@@ -138,19 +129,4 @@
 				</div>
 			</aside>
 		</section>
-</section> -->
-
-
-<div id="wrapper">	
-</div>
-
-
-<script>
-    load_data_template('category-index', '#wrapper', options.website.url + 'assets/php/data.php', {'data': 'page', 'slug':'facebook-like-button'}, 'append');
-</script>
-
-
-<?php
-	$html = ob_get_clean();
-	$GLOBALS['page']['content'] = $html;
-?>
+</section>
