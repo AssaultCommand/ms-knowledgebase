@@ -1,27 +1,28 @@
 /* - Custom Template Tags - */
 
-	/* custom_tag_url_encode()
-	*  Returns the value with spaces replaced with underscores for better looking URLs.
+	/* custom_tag_breadcrumbs()
+	*  Returns the formatted breadcrumbs based on a breadcrumbs array array.
 	*/
 	function custom_tag_breadcrumbs(value) {
-		breadcrumbs_list = JSON.parse(value);
-		breadcrumbs_output = '';
-		console.log(breadcrumbs_list);
+		var breadcrumbs_list = JSON.parse(value);
+		var breadcrumbs_output = '';
+		categories = {};
+
+		$.ajax({
+			url: options.website.url + 'assets/php/data.php?data=categories',
+			type: 'get',
+			dataType: 'json',
+			async: false
+		})
+		.done(function(data) {
+			categories = data;
+		});
 
 		breadcrumbs_list.forEach(function(breadcrumbs) {
-			breadcrumbs_string = [];
+			var breadcrumbs_string = [];
 			breadcrumbs.forEach(function(breadcrumb) {
-				$.ajax({
-					url: options.website.url + 'assets/php/data.php?data=category&id=' + breadcrumb,
-					type: 'get',
-					dataType: 'json',
-					async: false
-				})
-				 .done(function(data) {
-						breadcrumb = data.data[0].username;
-						breadcrumbs_string.push('<a href="#' + data.data[0].slug + '">' + data.data[0].slug + '</a>');
-						console.log(breadcrumbs_string.join(' &#x3E; '));
-				 });
+				var breadcrumb_category = $.grep(categories.data, function(breadcrumb_category){return breadcrumb_category.id === breadcrumb.toString();})[0];
+				breadcrumbs_string.push('<a href="#' + breadcrumb_category['slug'] + '">' + breadcrumb_category['name'] + '</a>');
 			});
 			breadcrumbs_output += breadcrumbs_string.join(' &#x3E; ') + '<br>';
 		});
@@ -56,13 +57,15 @@
 		var username = 'Anonymous';
 
 		$.ajax({
-			url: options.website.url + 'data.php?data=username&id=' + value,
+			url: options.website.url + 'assets/php/data.php?data=users&user_id=' + value,
 			type: 'get',
 			dataType: 'json',
 			async: false,
 			success: function(data) {
-				username = data.data[0].username;
 			}
+		})
+		.done(function(data) {
+			username = data.data[0].username;
 		});
 
 		return username;

@@ -70,7 +70,7 @@
 					<div class="comment">
 						<div class="commentPoster">
 							<div class="commentIcn"><i class="fas fa-user"></i></div>
-							<div class="commentFileName">{{:author}}</div>
+							<div class="commentFileName">{{user_id_name author /}}</div>
 							<div class="commentReleaseDate">Posted at <span>{{:timestamp}}</span></div>
 						</div>
 						<div class="commentContent">
@@ -81,8 +81,8 @@
 							<div class="btn btn-primary commentEditBtn"><i class="fas fa-edit"></i>Edit</div>
 						</div>
 					</div>
-		{{/for}}
 				</div>
+		{{/for}}
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
