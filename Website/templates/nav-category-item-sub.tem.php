@@ -3,7 +3,7 @@
 {{if parent == ~id}}
 <li>
     <div class="category">
-        <a href="#{{:slug}}">
+        <a href="category-{{:id}}">
             {{:name}}
         </a>
         {{if children > 0}}

@@ -71,9 +71,16 @@
 
 
 <script>
+	options.website.category_id = '<?php echo $_GET['id']; ?>';
+
+	var query = {
+  	'data': 'category_items',
+		'category_id': options.website.category_id ,
+  	'languages': [],
+  	'frameworks': []
+  };
 
 	var authors = [];
-
 	$.ajax({
 		url: window.options.website.url + 'assets/php/data.php?data=users',
 		type: 'get',
@@ -84,30 +91,23 @@
 		authors = data.data;
 	});
 
+  load_data_template('category-item', '#category-items', options.website.url + 'assets/php/data.php', query);
+  load_data_template('filter-language', '#sideBarLanguages', options.website.url + 'assets/php/data.php', {'data': 'languages'});
+  load_data_template('filter-framework', '#sideBarFrameworks', options.website.url + 'assets/php/data.php', {'data': 'frameworks'});
 
-    load_data_template('category-item', '#category-items', options.website.url + 'assets/php/data.php', {'data': 'category_items'});
+  $( "body" ).on( "change", "input[type='checkbox']", function() {
+	$('input[name^="languages[]"]:checked').toArray().forEach(function(language_checkbox) {
+		query['languages'] = [];
+		query['languages'].push(language_checkbox.value);
+	});
 
-    load_data_template('filter-language', '#sideBarLanguages', options.website.url + 'assets/php/data.php', {'data': 'languages'});
+	$('input[name^="frameworks[]"]:checked').toArray().forEach(function(framework_checkbox) {
+		query['frameworks'] = [];
+		query['frameworks'].push(framework_checkbox.value);
+	});
 
-    load_data_template('filter-framework', '#sideBarFrameworks', options.website.url + 'assets/php/data.php', {'data': 'frameworks'});
-
-    var query = {
-    	'data': 'category_items',
-    	'languages': [],
-    	'frameworks': []
-    };
-
-    $( "body" ).on( "change", "input[type='checkbox']", function() {
-		$('input[name^="languages[]"]:checked').toArray().forEach(function(language_checkbox) {
-			query['languages'].push(language_checkbox.value);
-		});
-
-		$('input[name^="frameworks[]"]:checked').toArray().forEach(function(framework_checkbox) {
-			query['frameworks'].push(framework_checkbox.value);
-		});
-
-    	load_data_template('category-item', '#category-items', options.website.url + 'assets/php/data.php', query);
-});
+  	load_data_template('category-item', '#category-items', options.website.url + 'assets/php/data.php', query);
+	});
 </script>
 
 

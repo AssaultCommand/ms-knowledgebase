@@ -7,4 +7,8 @@ DirectoryIndex index.php?page=home
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^([a-zA-Z0-9-_.]*)/?$ index.php?page=$1 [L,NC]
+#RewriteRule ^([a-zA-Z0-9-_.]*)/?$ index.php?page=$1 [L,NC]
+
+RewriteRule ^page-([a-zA-Z0-9-_.]*)/?$ index.php?page=page&slug=$1 [L,NC]
+RewriteRule ^category?$ index.php?page=categoryindex&id=NULL[L,NC]
+RewriteRule ^category-([a-zA-Z0-9-_.]*)/?$ index.php?page=categoryindex&id=$1 [L,NC]
