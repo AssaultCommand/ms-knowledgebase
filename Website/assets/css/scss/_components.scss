@@ -196,3 +196,11 @@ label {
 	color: $purple-dark;
 	font-weight: bold;
 }
+
+ .contentHighlight{
+     border: solid #642d55 2px;
+     border-radius: 6px;
+     padding: 10px 15px;
+     margin: 15px 0;
+     background: rgba(188, 128, 172,0.2);
+}
