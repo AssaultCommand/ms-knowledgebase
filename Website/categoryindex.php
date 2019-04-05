@@ -12,13 +12,8 @@
 	<section class="title-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<h1>
-						Sharing
-					</h1>
-					<div class="breadcrumbs">
-						<span>Front end</span> > <span>Social Media</span> > <span>Sharing</span>
-					</div>
+				<div class="col-sm-12" id="category-title">
+
 				</div>
 			</div>
 		</div>
@@ -91,6 +86,7 @@
 		authors = data.data;
 	});
 
+  load_data_template('category-title', '#category-title', options.website.url + 'assets/php/data.php', {'data': 'category', 'id': options.website.category_id});
   load_data_template('category-item', '#category-items', options.website.url + 'assets/php/data.php', query);
   load_data_template('filter-language', '#sideBarLanguages', options.website.url + 'assets/php/data.php', {'data': 'languages'});
   load_data_template('filter-framework', '#sideBarFrameworks', options.website.url + 'assets/php/data.php', {'data': 'frameworks'});
