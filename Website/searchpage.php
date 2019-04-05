@@ -54,57 +54,11 @@
 		<section class="page-sidebar">
 			<aside class="metaInfo">
 				<h4 class="sidePanelTitle">Languages</h4>
-				<div class="sideBarLanguages">
-					<div>
-					<input type="checkbox" id="phpcheckbox">
-						<label for="phpcheckbox">
-							<div class="checkbox"></div>
-							<span>PHP</span>
-						</label>
-					<input type="checkbox" id="htmlcheckbox">
-						<label for="htmlcheckbox">
-							<div class="checkbox"></div>
-							<span>HTML</span>
-						</label>
-					<input type="checkbox" id="javascriptcheckbox">
-						<label for="javascriptcheckbox">
-							<div class="checkbox"></div>
-							<span>Javascript</span>
-						</label>
-					<input type="checkbox" id="csscheckbox">
-						<label for="csscheckbox">
-							<div class="checkbox"></div>
-							<span>CSS</span>
-						</label>
-					</div>
-				</div>
+				<div id="sideBarLanguages"></div>
 			</aside>
 			<aside class="metaInfo">
 				<h4 class="sidePanelTitle">Framework</h4>
-				<div class="sideBarLanguages">
-					<div>
-					<input type="checkbox" id="laravelcheckbox">
-						<label for="laravelcheckbox">
-							<div class="checkbox"></div>
-							<span>Laravel</span>
-						</label>
-					<input type="checkbox" id="composercheckbox">
-						<label for="composercheckbox">
-							<div class="checkbox"></div>
-							<span>Composer</span>
-						</label>
-					<input type="checkbox" id="jquerycheckbox">
-						<label for="jquerycheckbox">
-							<div class="checkbox"></div>
-							<span>jQuery</span>
-						</label>
-					<input type="checkbox" id="angularcheckbox">
-						<label for="angularcheckbox">
-							<div class="checkbox"></div>
-							<span>Angular</span>
-						</label>
-					</div>
-				</div>
+				<div id="sideBarFrameworks"></div>
 			</aside>
 		</section>
 </section>
@@ -127,6 +81,10 @@
 
 
     load_data_template('category-item', '#category-items', options.website.url + 'assets/php/data.php', {'data': 'category_items'}, 'append');
+
+    load_data_template('filter-language', '#sideBarLanguages', options.website.url + 'assets/php/data.php', {'data': 'languages'}, 'append');
+
+    load_data_template('filter-framework', '#sideBarFrameworks', options.website.url + 'assets/php/data.php', {'data': 'frameworks'}, 'append');
 </script>
 
 <?php

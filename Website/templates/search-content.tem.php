@@ -74,37 +74,15 @@
 			<script>
 				autocomplete(document.getElementById("searchAuthor"), authors);
 			</script>
+
 		<section class="page-sidebar">
 			<aside class="metaInfo">
 				<h4 class="sidePanelTitle">Languages</h4>
-				<div class="sideBarLanguages">
-					<div>
-					<input type="checkbox" id="checkbox1">
-						<label for="checkbox1">
-							<div class="checkbox"></div>
-							<span>PHP</span>
-						</label>
-					<input type="checkbox" id="checkbox2">
-						<label for="checkbox2">
-							<div class="checkbox"></div>
-							<span>HTML</span>
-						</label>
-					<input type="checkbox" id="checkbox3">
-						<label for="checkbox3">
-							<div class="checkbox"></div>
-							<span>Javascript</span>
-						</label>
-					<input type="checkbox" id="checkbox4">
-						<label for="checkbox4">
-							<div class="checkbox"></div>
-							<span>CSS</span>
-						</label>
-					</div>		
-				</div>
+				<div id="sideBarLanguages"></div>
 			</aside>
 			<aside class="metaInfo">
 				<h4 class="sidePanelTitle">Framework</h4>
-				<div class="sideBarLanguages">
+				<div id="sideBarFrameworks">
 					<div>
 					<input type="checkbox" id="checkbox5">
 						<label for="checkbox5">

@@ -161,6 +161,8 @@
 	});
 
     load_data_template('category-index', '#wrapper', options.website.url + 'assets/php/data.php', {'data': 'page', 'slug':'facebook-like-button'}, 'append');
+
+
 </script>
 
 
