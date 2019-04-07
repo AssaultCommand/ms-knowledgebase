@@ -22,7 +22,7 @@
 			var breadcrumbs_string = [];
 			breadcrumbs.forEach(function(breadcrumb) {
 				var breadcrumb_category = $.grep(categories.data, function(breadcrumb_category){return breadcrumb_category.id === breadcrumb.toString();})[0];
-				breadcrumbs_string.push('<a href="#' + breadcrumb_category['slug'] + '">' + breadcrumb_category['name'] + '</a>');
+				breadcrumbs_string.push('<a href="category-' + breadcrumb_category['id'] + '">' + breadcrumb_category['name'] + '</a>');
 			});
 			breadcrumbs_output += breadcrumbs_string.join(' &#x3E; ') + '<br>';
 		});

@@ -29,8 +29,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-   {{:page.content}}
-
+   			{{:page.content}}
 				</div>
 			</div>
 			<hr>
@@ -49,7 +48,7 @@
 						<div class="attachmentIcn"><i class="fas fa-file"></i></div>
 						<div class="attachmentFileName">{{:filename}}</div>
 						<div class="attachmentReleaseDate">Uploaded {{:timestamp}} by <span>Pim</span></div>
-					</div>	
+					</div>
 				</div>
 		{{/for}}
 			</div>

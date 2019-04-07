@@ -9,12 +9,14 @@
 ?>
 
 
-<div id="wrapper">	
+<div id="wrapper">
 </div>
 
 
 <script>
-    load_data_template('page-content', '#wrapper', options.website.url + 'assets/php/data.php', {'data': 'page', 'slug':'facebook-like-button'}, 'append');
+		options.website.page_slug = '<?php echo $_GET['slug']; ?>';
+
+    load_data_template('page-content', '#wrapper', options.website.url + 'assets/php/data.php', {'data': 'page', 'slug': options.website.page_slug});
 </script>
 
 <?php

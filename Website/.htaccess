@@ -1,7 +1,7 @@
 Options +FollowSymlinks -MultiViews
 RewriteEngine on
 
-DirectoryIndex index.php?page=home
+DirectoryIndex index.php?page=categoryindex&id=2
 
 ### Default page loading
 RewriteCond %{REQUEST_FILENAME} !-f

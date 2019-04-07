@@ -5,5 +5,5 @@
 
 	<div class="languageDescriptor">{{language_parse metainfo /}}</div>
 	{{:description}}
-	
+	<a href="page-{{:slug}}" class="stretched-link"></a>
 </div>
